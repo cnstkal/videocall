@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messenger UI Concept</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone">
+    <section class="screen">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Friends</p>
+          <h1>LINE</h1>
+        </div>
+        <div class="top-actions" aria-label="top actions">
+          <button>⌕</button>
+          <button>＋</button>
+          <button>⚙</button>
+        </div>
+      </header>
+
+      <section class="profile-card">
+        <div class="avatar main-avatar">C</div>
+        <div class="profile-text">
+          <strong>CLOW official</strong>
+          <span>오늘도 연결됨 · 새 메시지 8개</span>
+        </div>
+        <button class="mini-btn">프로필</button>
+      </section>
+
+      <nav class="quick-menu" aria-label="quick menu">
+        <button><span>💬</span> Chats</button>
+        <button><span>📞</span> Calls</button>
+        <button><span>🖼</span> Albums</button>
+        <button><span>⋯</span> More</button>
+      </nav>
+
+      <section class="content">
+        <div class="section-title">
+          <h2>Chats</h2>
+          <span>최근 업데이트</span>
+        </div>
+
+        <article class="chat active">
+          <div class="avatar gradient-a">R</div>
+          <div class="chat-body">
+            <div class="chat-head">
+              <strong>린위</strong>
+              <time>22:14</time>
+            </div>
+            <p>팬사인회 캡쳐 느낌으로 확인해줘!</p>
+          </div>
+          <span class="badge">3</span>
+        </article>
+
+        <article class="chat">
+          <div class="avatar gradient-b">M</div>
+          <div class="chat-body">
+            <div class="chat-head">
+              <strong>멤버 단체방</strong>
+              <time>21:58</time>
+            </div>
+            <p>사진은 배경 회색~흰색 중간으로 맞추기</p>
+          </div>
+        </article>
+
+        <article class="chat">
+          <div class="avatar gradient-c">S</div>
+          <div class="chat-body">
+            <div class="chat-head">
+              <strong>Staff Room</strong>
+              <time>20:31</time>
+            </div>
+            <p>상품 페이지 시안 업데이트 완료</p>
+          </div>
+          <span class="badge muted">1</span>
+        </article>
+
+        <article class="chat">
+          <div class="avatar gradient-d">A</div>
+          <div class="chat-body">
+            <div class="chat-head">
+              <strong>Album Concept</strong>
+              <time>어제</time>
+            </div>
+            <p>흐릿한 포카 배열과 미니 오브젝트 구성</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="conversation">
+        <header class="room-header">
+          <button>‹</button>
+          <div class="avatar gradient-a small">R</div>
+          <div>
+            <strong>린위</strong>
+            <span>온라인</span>
+          </div>
+          <button class="call">☎</button>
+        </header>
+
+        <div class="messages">
+          <p class="date-chip">Today</p>
+          <div class="bubble other">오늘 영상통화 캡쳐처럼 보이게 해줘</div>
+          <div class="bubble other">너무 셀카처럼 들고 있는 느낌은 싫어</div>
+          <div class="bubble me">오케이. 거치대 고정 전면카메라 느낌으로.</div>
+          <div class="bubble me">압축감은 살리고 얼굴은 또렷하게!</div>
+        </div>
+
+        <form class="composer">
+          <button type="button">＋</button>
+          <input type="text" value="메시지를 입력하세요" aria-label="message" />
+          <button type="button">➤</button>
+        </form>
+      </section>
+
+      <footer class="tabbar">
+        <button class="selected">🏠<span>Home</span></button>
+        <button>💬<span>Chats</span></button>
+        <button>📞<span>Calls</span></button>
+        <button>🛍<span>Shop</span></button>
+        <button>⋯<span>More</span></button>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
