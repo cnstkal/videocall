@@ -3,127 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Messenger UI Concept</title>
+  <title>LINE Style Messenger</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="phone">
-    <section class="screen">
-      <header class="topbar">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-area">
+        <div class="brand-logo">L</div>
         <div>
-          <p class="eyebrow">Friends</p>
-          <h1>LINE</h1>
+          <strong>LINE</strong>
+          <span>Messenger concept</span>
         </div>
-        <div class="top-actions" aria-label="top actions">
-          <button>⌕</button>
-          <button>＋</button>
-          <button>⚙</button>
-        </div>
-      </header>
+      </div>
 
-      <section class="profile-card">
-        <div class="avatar main-avatar">C</div>
-        <div class="profile-text">
-          <strong>CLOW official</strong>
-          <span>오늘도 연결됨 · 새 메시지 8개</span>
-        </div>
-        <button class="mini-btn">프로필</button>
-      </section>
-
-      <nav class="quick-menu" aria-label="quick menu">
-        <button><span>💬</span> Chats</button>
-        <button><span>📞</span> Calls</button>
-        <button><span>🖼</span> Albums</button>
-        <button><span>⋯</span> More</button>
+      <nav class="side-nav">
+        <button class="nav-btn active" data-page="home">홈</button>
+        <button class="nav-btn" data-page="chats">채팅</button>
+        <button class="nav-btn" data-page="calls">통화</button>
+        <button class="nav-btn" data-page="friends">친구</button>
+        <button class="nav-btn" data-page="more">더보기</button>
       </nav>
+    </aside>
 
-      <section class="content">
-        <div class="section-title">
-          <h2>Chats</h2>
-          <span>최근 업데이트</span>
-        </div>
-
-        <article class="chat active">
-          <div class="avatar gradient-a">R</div>
-          <div class="chat-body">
-            <div class="chat-head">
-              <strong>린위</strong>
-              <time>22:14</time>
-            </div>
-            <p>팬사인회 캡쳐 느낌으로 확인해줘!</p>
-          </div>
-          <span class="badge">3</span>
-        </article>
-
-        <article class="chat">
-          <div class="avatar gradient-b">M</div>
-          <div class="chat-body">
-            <div class="chat-head">
-              <strong>멤버 단체방</strong>
-              <time>21:58</time>
-            </div>
-            <p>사진은 배경 회색~흰색 중간으로 맞추기</p>
-          </div>
-        </article>
-
-        <article class="chat">
-          <div class="avatar gradient-c">S</div>
-          <div class="chat-body">
-            <div class="chat-head">
-              <strong>Staff Room</strong>
-              <time>20:31</time>
-            </div>
-            <p>상품 페이지 시안 업데이트 완료</p>
-          </div>
-          <span class="badge muted">1</span>
-        </article>
-
-        <article class="chat">
-          <div class="avatar gradient-d">A</div>
-          <div class="chat-body">
-            <div class="chat-head">
-              <strong>Album Concept</strong>
-              <time>어제</time>
-            </div>
-            <p>흐릿한 포카 배열과 미니 오브젝트 구성</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="conversation">
-        <header class="room-header">
-          <button>‹</button>
-          <div class="avatar gradient-a small">R</div>
+    <main class="app-main">
+      <section class="page active" id="home">
+        <header class="page-header green">
           <div>
-            <strong>린위</strong>
-            <span>온라인</span>
+            <p>Friends</p>
+            <h1>홈</h1>
           </div>
-          <button class="call">☎</button>
+          <div class="header-actions">
+            <button>검색</button><button>추가</button><button>설정</button>
+          </div>
         </header>
 
-        <div class="messages">
-          <p class="date-chip">Today</p>
-          <div class="bubble other">오늘 영상통화 캡쳐처럼 보이게 해줘</div>
-          <div class="bubble other">너무 셀카처럼 들고 있는 느낌은 싫어</div>
-          <div class="bubble me">오케이. 거치대 고정 전면카메라 느낌으로.</div>
-          <div class="bubble me">압축감은 살리고 얼굴은 또렷하게!</div>
-        </div>
+        <div class="home-grid">
+          <section class="my-profile card">
+            <div class="avatar large">C</div>
+            <div>
+              <h2>CLOW official</h2>
+              <p>오늘도 연결됨 · 새 메시지 8개</p>
+            </div>
+          </section>
 
-        <form class="composer">
-          <button type="button">＋</button>
-          <input type="text" value="메시지를 입력하세요" aria-label="message" />
-          <button type="button">➤</button>
-        </form>
+          <section class="card menu-card">
+            <h2>바로가기</h2>
+            <div class="quick-grid">
+              <button data-page="chats">채팅</button>
+              <button data-page="calls">통화</button>
+              <button data-page="friends">친구</button>
+              <button data-page="more">더보기</button>
+            </div>
+          </section>
+        </div>
       </section>
 
-      <footer class="tabbar">
-        <button class="selected">🏠<span>Home</span></button>
-        <button>💬<span>Chats</span></button>
-        <button>📞<span>Calls</span></button>
-        <button>🛍<span>Shop</span></button>
-        <button>⋯<span>More</span></button>
-      </footer>
-    </section>
-  </main>
+      <section class="page" id="chats">
+        <div class="chat-layout">
+          <section class="chat-list-panel">
+            <header class="list-header">
+              <h1>채팅</h1>
+              <button>＋</button>
+            </header>
+
+            <button class="chat-row active" data-room="room-rinwi">
+              <div class="avatar blue">R</div>
+              <div class="chat-copy">
+                <strong>린위</strong>
+                <span>팬사인회 캡쳐 느낌으로 확인해줘!</span>
+              </div>
+              <time>22:14</time>
+              <b>3</b>
+            </button>
+
+            <button class="chat-row" data-room="room-members">
+              <div class="avatar peach">M</div>
+              <div class="chat-copy">
+                <strong>멤버 단체방</strong>
+                <span>사진은 배경 회색~흰색 중간으로 맞추기</span>
+              </div>
+              <time>21:58</time>
+            </button>
+
+            <button class="chat-row" data-room="room-staff">
+              <div class="avatar mint">S</div>
+              <div class="chat-copy">
+                <strong>Staff Room</strong>
+                <span>상품 페이지 시안 업데이트 완료</span>
+              </div>
+              <time>20:31</time>
+            </button>
+          </section>
+
+          <section class="room active" id="room-rinwi">
+            <header class="room-header">
+              <button class="back-to-list">‹</button>
+              <div class="avatar blue">R</div>
+              <div><strong>린위</strong><span>온라인</span></div>
+              <button class="call-btn">통화</button>
+            </header>
+            <div class="messages">
+              <p class="date-chip">Today</p>
+              <div class="bubble other">오늘 영상통화 캡쳐처럼 보이게 해줘</div>
+              <div class="bubble other">너무 셀카처럼 들고 있는 느낌은 싫어</div>
+              <div class="bubble me">오케이. 거치대 고정 전면카메라 느낌으로.</div>
+              <div class="bubble me">압축감은 살리고 얼굴은 또렷하게!</div>
+            </div>
+            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
+          </section>
+
+          <section class="room" id="room-members">
+            <header class="room-header"><button class="back-to-list">‹</button><div class="avatar peach">M</div><div><strong>멤버 단체방</strong><span>8명</span></div></header>
+            <div class="messages"><p class="date-chip">Today</p><div class="bubble other">배경은 밝고 깨끗하게</div><div class="bubble me">ㅇㅋ 너무 누렇지 않게 할게</div></div>
+            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
+          </section>
+
+          <section class="room" id="room-staff">
+            <header class="room-header"><button class="back-to-list">‹</button><div class="avatar mint">S</div><div><strong>Staff Room</strong><span>작업중</span></div></header>
+            <div class="messages"><p class="date-chip">Today</p><div class="bubble other">상품 페이지 시안 업데이트 완료</div><div class="bubble me">확인할게!</div></div>
+            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
+          </section>
+        </div>
+      </section>
+
+      <section class="page simple" id="calls"><h1>통화</h1><p>최근 통화 목록이 여기에 표시됩니다.</p></section>
+      <section class="page simple" id="friends"><h1>친구</h1><p>친구 목록과 추천 친구 영역입니다.</p></section>
+      <section class="page simple" id="more"><h1>더보기</h1><p>스티커, 앨범, 설정 같은 메뉴 영역입니다.</p></section>
+    </main>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const navBtns = document.querySelectorAll('[data-page]');
+    const chatRows = document.querySelectorAll('[data-room]');
+    const rooms = document.querySelectorAll('.room');
+    const chatLayout = document.querySelector('.chat-layout');
+
+    function openPage(id){
+      pages.forEach(p => p.classList.toggle('active', p.id === id));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === id));
+    }
+    navBtns.forEach(btn => btn.addEventListener('click', () => openPage(btn.dataset.page)));
+
+    chatRows.forEach(row => row.addEventListener('click', () => {
+      chatRows.forEach(r => r.classList.remove('active'));
+      row.classList.add('active');
+      rooms.forEach(room => room.classList.toggle('active', room.id === row.dataset.room));
+      chatLayout.classList.add('room-open');
+    }));
+
+    document.querySelectorAll('.back-to-list').forEach(btn => btn.addEventListener('click', () => chatLayout.classList.remove('room-open')));
+  </script>
 </body>
 </html>
