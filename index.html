@@ -9,14 +9,7 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand-area">
-        <div class="brand-logo">L</div>
-        <div>
-          <strong>LINE</strong>
-          <span>Messenger concept</span>
-        </div>
-      </div>
-
+      <div class="brand-area"><div class="brand-logo">L</div><strong>LINE</strong></div>
       <nav class="side-nav">
         <button class="nav-btn active" data-page="home">홈</button>
         <button class="nav-btn" data-page="chats">채팅</button>
@@ -28,33 +21,21 @@
 
     <main class="app-main">
       <section class="page active" id="home">
-        <header class="page-header green">
-          <div>
-            <p>Friends</p>
-            <h1>홈</h1>
-          </div>
-          <div class="header-actions">
-            <button>검색</button><button>추가</button><button>설정</button>
-          </div>
-        </header>
-
+        <header class="page-header green"><div><p>Friends</p><h1>홈</h1></div></header>
         <div class="home-grid">
           <section class="my-profile card">
-            <div class="avatar large">C</div>
-            <div>
-              <h2>CLOW official</h2>
-              <p>오늘도 연결됨 · 새 메시지 8개</p>
-            </div>
+            <div class="avatar large" id="myAvatar">C</div>
+            <div><h2 id="myNameView">CLOW official</h2><p>내 프로필을 자유롭게 바꿀 수 있어요</p></div>
           </section>
-
+          <section class="card profile-editor">
+            <h2>내 프로필 변경</h2>
+            <input id="profileName" placeholder="이름 입력" value="CLOW official" />
+            <input id="profilePhoto" type="file" accept="image/*" />
+            <button id="saveProfile">저장</button>
+          </section>
           <section class="card menu-card">
             <h2>바로가기</h2>
-            <div class="quick-grid">
-              <button data-page="chats">채팅</button>
-              <button data-page="calls">통화</button>
-              <button data-page="friends">친구</button>
-              <button data-page="more">더보기</button>
-            </div>
+            <div class="quick-grid"><button data-page="chats">채팅</button><button data-page="calls">통화</button><button data-page="friends">친구</button><button data-page="more">더보기</button></div>
           </section>
         </div>
       </section>
@@ -62,98 +43,48 @@
       <section class="page" id="chats">
         <div class="chat-layout">
           <section class="chat-list-panel">
-            <header class="list-header">
-              <h1>채팅</h1>
-              <button>＋</button>
-            </header>
-
-            <button class="chat-row active" data-room="room-rinwi">
-              <div class="avatar blue">R</div>
-              <div class="chat-copy">
-                <strong>린위</strong>
-                <span>팬사인회 캡쳐 느낌으로 확인해줘!</span>
-              </div>
-              <time>22:14</time>
-              <b>3</b>
-            </button>
-
-            <button class="chat-row" data-room="room-members">
-              <div class="avatar peach">M</div>
-              <div class="chat-copy">
-                <strong>멤버 단체방</strong>
-                <span>사진은 배경 회색~흰색 중간으로 맞추기</span>
-              </div>
-              <time>21:58</time>
-            </button>
-
-            <button class="chat-row" data-room="room-staff">
-              <div class="avatar mint">S</div>
-              <div class="chat-copy">
-                <strong>Staff Room</strong>
-                <span>상품 페이지 시안 업데이트 완료</span>
-              </div>
-              <time>20:31</time>
-            </button>
+            <header class="list-header"><h1>채팅</h1><button id="addChatBtn">＋</button></header>
+            <div id="chatList"></div>
           </section>
-
-          <section class="room active" id="room-rinwi">
+          <section class="room active" id="chatRoom">
             <header class="room-header">
-              <button class="back-to-list">‹</button>
-              <div class="avatar blue">R</div>
-              <div><strong>린위</strong><span>온라인</span></div>
-              <button class="call-btn">통화</button>
+              <button class="back-to-list">‹</button><div class="avatar blue" id="roomAvatar">R</div><div><strong id="roomName">린위</strong><span>온라인</span></div>
+              <button class="call-btn" id="videoCallBtn">영통</button>
             </header>
-            <div class="messages">
-              <p class="date-chip">Today</p>
-              <div class="bubble other">오늘 영상통화 캡쳐처럼 보이게 해줘</div>
-              <div class="bubble other">너무 셀카처럼 들고 있는 느낌은 싫어</div>
-              <div class="bubble me">오케이. 거치대 고정 전면카메라 느낌으로.</div>
-              <div class="bubble me">압축감은 살리고 얼굴은 또렷하게!</div>
-            </div>
-            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
-          </section>
-
-          <section class="room" id="room-members">
-            <header class="room-header"><button class="back-to-list">‹</button><div class="avatar peach">M</div><div><strong>멤버 단체방</strong><span>8명</span></div></header>
-            <div class="messages"><p class="date-chip">Today</p><div class="bubble other">배경은 밝고 깨끗하게</div><div class="bubble me">ㅇㅋ 너무 누렇지 않게 할게</div></div>
-            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
-          </section>
-
-          <section class="room" id="room-staff">
-            <header class="room-header"><button class="back-to-list">‹</button><div class="avatar mint">S</div><div><strong>Staff Room</strong><span>작업중</span></div></header>
-            <div class="messages"><p class="date-chip">Today</p><div class="bubble other">상품 페이지 시안 업데이트 완료</div><div class="bubble me">확인할게!</div></div>
-            <form class="composer"><button type="button">＋</button><input placeholder="메시지를 입력하세요"/><button type="button">전송</button></form>
+            <div class="messages" id="messages"></div>
+            <form class="composer" id="composer"><button type="button" id="photoBtn">사진</button><input id="photoInput" type="file" accept="image/*" hidden><input id="messageInput" placeholder="메시지를 입력하세요"/><button type="submit">전송</button></form>
           </section>
         </div>
       </section>
 
-      <section class="page simple" id="calls"><h1>통화</h1><p>최근 통화 목록이 여기에 표시됩니다.</p></section>
+      <section class="page simple" id="calls"><h1>통화</h1><p id="callLog">최근 통화 목록이 여기에 표시됩니다.</p></section>
       <section class="page simple" id="friends"><h1>친구</h1><p>친구 목록과 추천 친구 영역입니다.</p></section>
       <section class="page simple" id="more"><h1>더보기</h1><p>스티커, 앨범, 설정 같은 메뉴 영역입니다.</p></section>
     </main>
   </div>
 
+  <div class="modal" id="addChatModal"><div class="modal-box"><h2>채팅 추가</h2><input id="newChatName" placeholder="상대 이름"><button id="createChat">추가</button><button id="closeModal">취소</button></div></div>
+
   <script>
-    const pages = document.querySelectorAll('.page');
-    const navBtns = document.querySelectorAll('[data-page]');
-    const chatRows = document.querySelectorAll('[data-room]');
-    const rooms = document.querySelectorAll('.room');
-    const chatLayout = document.querySelector('.chat-layout');
-
-    function openPage(id){
-      pages.forEach(p => p.classList.toggle('active', p.id === id));
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.page === id));
-    }
-    navBtns.forEach(btn => btn.addEventListener('click', () => openPage(btn.dataset.page)));
-
-    chatRows.forEach(row => row.addEventListener('click', () => {
-      chatRows.forEach(r => r.classList.remove('active'));
-      row.classList.add('active');
-      rooms.forEach(room => room.classList.toggle('active', room.id === row.dataset.room));
-      chatLayout.classList.add('room-open');
-    }));
-
-    document.querySelectorAll('.back-to-list').forEach(btn => btn.addEventListener('click', () => chatLayout.classList.remove('room-open')));
+    const pages=document.querySelectorAll('.page'),navBtns=document.querySelectorAll('[data-page]'),chatLayout=document.querySelector('.chat-layout');
+    const chatList=document.getElementById('chatList'),messages=document.getElementById('messages'),roomName=document.getElementById('roomName'),roomAvatar=document.getElementById('roomAvatar');
+    let current=0;
+    let chats=[{name:'린위',avatar:'R',messages:[['other','오늘 영상통화 캡쳐처럼 보이게 해줘'],['other','너무 셀카처럼 들고 있는 느낌은 싫어'],['me','오케이. 거치대 고정 전면카메라 느낌으로.'],['me','압축감은 살리고 얼굴은 또렷하게!']]},{name:'멤버 단체방',avatar:'M',messages:[['other','배경은 밝고 깨끗하게'],['me','ㅇㅋ 너무 누렇지 않게 할게']]},{name:'Staff Room',avatar:'S',messages:[['other','상품 페이지 시안 업데이트 완료'],['me','확인할게!']]}];
+    function openPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));}
+    navBtns.forEach(btn=>btn.addEventListener('click',()=>openPage(btn.dataset.page)));
+    function renderChats(){chatList.innerHTML='';chats.forEach((c,i)=>{let last=c.messages.at(-1);let row=document.createElement('button');row.className='chat-row '+(i===current?'active':'');row.innerHTML=`<div class="avatar blue">${c.avatar}</div><div class="chat-copy"><strong>${c.name}</strong><span>${last?last[1].replace(/<[^>]*>/g,''):'새 채팅'}</span></div><time>방금</time>`;row.onclick=()=>{current=i;renderAll();chatLayout.classList.add('room-open')};chatList.appendChild(row)})}
+    function renderMessages(){let c=chats[current];roomName.textContent=c.name;roomAvatar.textContent=c.avatar;messages.innerHTML='<p class="date-chip">Today</p>';c.messages.forEach((m,i)=>{let wrap=document.createElement('div');wrap.className='msg-wrap '+m[0];wrap.innerHTML=`<div class="bubble ${m[0]}">${m[1]}</div><button class="delete-msg" title="삭제">삭제</button>`;wrap.querySelector('button').onclick=()=>{c.messages.splice(i,1);renderAll()};messages.appendChild(wrap)});messages.scrollTop=messages.scrollHeight}
+    function renderAll(){renderChats();renderMessages()}
+    document.getElementById('composer').onsubmit=e=>{e.preventDefault();let input=document.getElementById('messageInput');let text=input.value.trim();if(!text)return;chats[current].messages.push(['me',text]);input.value='';renderAll()};
+    document.getElementById('photoBtn').onclick=()=>document.getElementById('photoInput').click();
+    document.getElementById('photoInput').onchange=e=>{let file=e.target.files[0];if(!file)return;let r=new FileReader();r.onload=()=>{chats[current].messages.push(['me',`<img class="sent-img" src="${r.result}">`]);renderAll()};r.readAsDataURL(file)};
+    document.getElementById('addChatBtn').onclick=()=>document.getElementById('addChatModal').classList.add('show');
+    document.getElementById('closeModal').onclick=()=>document.getElementById('addChatModal').classList.remove('show');
+    document.getElementById('createChat').onclick=()=>{let n=document.getElementById('newChatName').value.trim();if(!n)return;chats.push({name:n,avatar:n[0].toUpperCase(),messages:[['other','새 채팅이 시작됐어요']]});current=chats.length-1;document.getElementById('newChatName').value='';document.getElementById('addChatModal').classList.remove('show');openPage('chats');renderAll()};
+    document.getElementById('videoCallBtn').onclick=()=>{document.getElementById('callLog').textContent=chats[current].name+'님과 영상통화 화면으로 연결되었습니다.';alert(chats[current].name+'님과 영상통화를 시작합니다.');openPage('calls')};
+    document.getElementById('saveProfile').onclick=()=>{let name=document.getElementById('profileName').value.trim()||'Me';document.getElementById('myNameView').textContent=name;let file=document.getElementById('profilePhoto').files[0];if(file){let r=new FileReader();r.onload=()=>{document.getElementById('myAvatar').style.backgroundImage=`url(${r.result})`;document.getElementById('myAvatar').textContent=''};r.readAsDataURL(file)}else{document.getElementById('myAvatar').textContent=name[0].toUpperCase()}};
+    document.querySelectorAll('.back-to-list').forEach(btn=>btn.onclick=()=>chatLayout.classList.remove('room-open'));
+    renderAll();
   </script>
 </body>
 </html>
